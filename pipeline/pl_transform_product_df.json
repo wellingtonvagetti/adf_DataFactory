@@ -1,0 +1,45 @@
+{
+	"name": "pl_transform_product_df",
+	"properties": {
+		"activities": [
+			{
+				"name": "transform_product",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "df_transform_product",
+						"type": "DataFlowReference",
+						"datasetParameters": {
+							"ReadBronzeProduct": {
+								"container": "bronze",
+								"path": "SalesLt/Product/20230626",
+								"fileName": "file.parquet"
+							},
+							"WriteProductSilver": {
+								"container": "silver",
+								"path": "SalesLt/Product_Dataflow"
+							}
+						}
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-06-27T14:32:04Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

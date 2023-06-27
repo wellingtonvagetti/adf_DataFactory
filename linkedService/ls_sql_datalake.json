@@ -1,0 +1,19 @@
+{
+	"name": "ls_sql_datalake",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=srv-db-vagetti.database.windows.net;Initial Catalog=db-projetoDF;User ID=sql.admin",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "ls_kv",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "pwd-sql-datalake"
+			}
+		}
+	}
+}

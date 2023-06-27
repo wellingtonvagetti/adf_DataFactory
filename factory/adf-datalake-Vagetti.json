@@ -1,0 +1,9 @@
+{
+	"name": "adf-datalake-Vagetti",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "bb409605-c2c6-46d1-b33b-99b9cb56ceaa",
+		"tenantId": "4da0eafd-df6c-46a4-adbb-d55a473769c2"
+	}
+}

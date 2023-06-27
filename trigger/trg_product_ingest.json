@@ -1,0 +1,24 @@
+{
+	"name": "trg_product_ingest",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "ingest_salesLt_product",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 1,
+				"startTime": "2023-06-27T15:15:00",
+				"timeZone": "E. South America Standard Time"
+			}
+		}
+	}
+}

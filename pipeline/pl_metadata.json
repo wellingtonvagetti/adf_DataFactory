@@ -1,0 +1,45 @@
+{
+	"name": "pl_metadata",
+	"properties": {
+		"activities": [
+			{
+				"name": "Get Metadata1",
+				"type": "GetMetadata",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "ds_ftp_ibge_binary",
+						"type": "DatasetReference",
+						"parameters": {
+							"Directory": "Acesso_a_internet_e_posse_celular/2015/Tabelas_de_Resultados/xlsx/02_Domicilios_Particulares_Permanentes"
+						}
+					},
+					"fieldList": [
+						"childItems"
+					],
+					"storeSettings": {
+						"type": "FtpReadSettings",
+						"recursive": true,
+						"enablePartitionDiscovery": false,
+						"useBinaryTransfer": true,
+						"disableChunking": false
+					},
+					"formatSettings": {
+						"type": "BinaryReadSettings"
+					}
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-06-27T14:59:54Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
